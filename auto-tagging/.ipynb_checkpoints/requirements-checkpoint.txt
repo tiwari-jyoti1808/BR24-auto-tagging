@@ -1,0 +1,15 @@
+de-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.0.0/de_core_news_sm-3.0.0-py3-none-any.whl
+Flask==2.0.1 
+flask_cors
+gunicorn==20.1.0
+Keras-Preprocessing==1.1.2
+numpy==1.19.5
+pandas==1.2.4
+nltk==3.6.2
+google-cloud-storage==1.40.0
+tensorflow==2.4.1
+tensorflow-text
+tensorflow-hub==0.12.0
+tensorboard==2.5.0
+spacy==3.0.6
+pytrends==4.7.3
