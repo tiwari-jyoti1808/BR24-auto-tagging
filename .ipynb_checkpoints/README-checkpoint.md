@@ -26,21 +26,20 @@ check.py and main.py are modules to test the service.
 The auto-tagging service can be tested in 3 ways:
 
 1. Test locally without docker and without server.
-Run the file check.py by giving command 'python check.py' in the terminal. Text for the article can be specified in the placeholder [TEXT], in the check.py file.
+    * Run the file check.py by giving command 'python check.py' in the terminal. Text for the article can be specified in the placeholder [TEXT], in the check.py file.
     
 2. Test locally without docker but with server.
-Run the file main.py by giving command 'python main.py' in the terminal. 
-While the server starts in the current terminal, open a new terminal and enter 'python'. This activates the pythom environment and enter 'import requests' to start exchange with the server. 
-Enter 'r = requests.post('http://127.0.0.1:5000/predict', json={'id':1234, 'data':'[TEXT]'})' in the terminal to send a message request to the server of the service. Replace the placeholder '[TEXT]' with the text of the article for which tags need to be predicted.
-You can check if the message request was successful by the command 'r.status_code', which should return 200.
-Results from the service can be obtained by giving the 'r.json()' command.
+    * Run the file main.py by giving command 'python main.py' in the terminal. 
+    * While the server starts in the current terminal, open a new terminal and enter 'python'. This activates the pythom environment and enter 'import requests' to start exchange with the server. 
+    * Enter 'r = requests.post('http://127.0.0.1:5000/predict', json={'id':1234, 'data':'[TEXT]'})' in the terminal to send a message request to the server of the service. Replace the placeholder '[TEXT]' with the text of the article for which tags need to be predicted.
+    * You can check if the message request was successful by the command 'r.status_code', which should return 200.
+    * Results from the service can be obtained by giving the 'r.json()' command.
     
 3. Test locally with docker and with server.
-Docker command to start container: docker-compose up --build --remove-orphans 
-Docker command to inspect Docker Network: docker network inspect [NETWORK NAME] | grep IPv4
+    * Docker command to start container: docker-compose up --build --remove-orphans 
+    * Docker command to inspect Docker Network: docker network inspect [NETWORK NAME] | grep IPv4
     
-While the container starts in the current terminal, open a new terminal and enter 'python'. This activates the pythom environment and enter 'import requests' to start exchange with the server. 
-Enter 'r = requests.post('http://172.19.0.2:8007/predict', json={'id':1234, 'data':'[TEXT]'})' in the terminal to send a message request to the server of the service. Replace the placeholder '[TEXT]' with the text of the article for which tags need to be predicted. The IPv4 address may be vary and the correct address can be obtained by inspecting the docker network.
-
-You can check if the message request was successful by the command 'r.status_code', which should return 200.
-Results from the service can be obtained by giving the 'r.json()' command.
+    * While the container starts in the current terminal, open a new terminal and enter 'python'. This activates the pythom environment and enter 'import requests' to start exchange with the server. 
+    * Enter 'r = requests.post('http://172.19.0.2:8007/predict', json={'id':1234, 'data':'[TEXT]'})' in the terminal to send a message request to the server of the service. Replace the placeholder '[TEXT]' with the text of the article for which tags need to be predicted. The IPv4 address may be vary and the correct address can be obtained by inspecting the docker network.
+    * You can check if the message request was successful by the command 'r.status_code', which should return 200.
+    * Results from the service can be obtained by giving the 'r.json()' command.
